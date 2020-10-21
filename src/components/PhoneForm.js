@@ -17,8 +17,8 @@ class PhoneForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault(); //prevent refreshing when click submit button
-        this.props.onCreate(this.state);
-        this.setState({
+        this.props.onCreate(this.state); // send the state to parents
+        this.setState({ // initialize the state to none
             name: '',
             phone: '',
         })
