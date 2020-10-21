@@ -15,9 +15,20 @@ class PhoneForm extends Component {
         })
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault(); //prevent refreshing when click submit button
+        this.props.onCreate(this.state);
+        this.setState({
+            name: '',
+            phone: '',
+        })
+    }
+
     render() {
         return ( <
-            form >
+            form onSubmit = {
+                this.handleSubmit
+            } >
             <
             input name = "name"
             placeholder = "이름"
@@ -36,7 +47,8 @@ class PhoneForm extends Component {
             value = {
                 this.state.phone
             }
-            / >  <
+            / >   <
+            button type = "submit" > submit < /button> <
             div > {
                 this.state.name
             } {
