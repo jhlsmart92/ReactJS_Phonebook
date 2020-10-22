@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 
 class PhoneForm extends Component {
+    input = React.createRef();
 
     state = {
         name: '',
@@ -22,6 +23,7 @@ class PhoneForm extends Component {
             name: '',
             phone: '',
         })
+        this.input.current.focus();
     }
 
     render() {
@@ -47,6 +49,7 @@ class PhoneForm extends Component {
             value = {
                 this.state.phone
             }
+            ref = { this.input }
             / >   <
             button type = "submit" > submit < /button> <
             div > {
